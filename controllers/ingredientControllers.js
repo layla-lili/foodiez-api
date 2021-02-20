@@ -29,3 +29,28 @@ exports.ingredientList = async (req, res, next) => {
     next(error);
   }
 };
+
+// exports.ingredientCreate = async (req, res, next) => {
+//   try {
+//     if (req.file) {
+//       req.body.image = `http://${req.get("host")}/media/${req.file.filename}`;
+//     }
+//     const newIngredient = await Ingredient.create(req.body);
+//     res.status(201).json(newIngredient);
+//   } catch (error) {
+//     next(error);
+//   }
+// };
+
+// exports.recipeCreate = async (req, res, next) => {
+//   try {
+//     if (req.file) {
+//       req.body.image = `http://${req.get("host")}/media/${req.file.filename}`;
+//     }
+//     req.body.recipeId = req.Ingredient.id;
+//     const newRecipe = await Recipe.create(req.body);
+//     res.status(201).json(newRecipe);
+//   } catch (error) {
+//     next(error);
+//   }
+// };

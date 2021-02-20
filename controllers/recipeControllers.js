@@ -29,3 +29,16 @@ exports.recipeList = async (req, res, next) => {
     next(error);
   }
 };
+
+// exports.recipeCreate = async (req, res, next) => {
+//   try {
+//     if (req.file) {
+//       req.body.image = `http://${req.get("host")}/media/${req.file.filename}`;
+//     }
+
+//     const newRecipe = await Recipe.create(req.body);
+//     res.status(201).json(newRecipe);
+//   } catch (error) {
+//     next(error);
+//   }
+// };

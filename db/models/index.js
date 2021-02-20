@@ -55,17 +55,48 @@ db.Ingredient.belongsTo(db.Category, {
   as: "category",
 });
 
-// M-M
-db.Ingredient.belongsToMany(
-  db.Recipe,
-  { foreignKey: "recipeId", as: "recipe" },
-  { through: "ingredientRecipe" }
-);
+// const ingredientRecipe = sequelize.define("ingredientRecipe", {
+//   id: {
+//     type: Sequelize.DataTypes.INTEGER,
+//     primaryKey: true,
+//     autoIncrement: true,
+//     allowNull: false,
+//   },
+// });
+// db.Ingredient.belongsToMany(db.Recipe, {
+//   foreignKey: "recipeId",
+//   as: "recipes",
+//   through: ingredientRecipe,
+// });
+// db.Recipe.belongsToMany(db.Ingredient, {
+//   foreignKey: "ingredientId",
+//   as: "ingredient",
+//   through: ingredientRecipe,
+// });
+// ingredientRecipe.belongsTo(db.Recipe);
+// ingredientRecipe.belongsTo(db.Ingredient);
+// db.Recipe.hasMany(ingredientRecipe);
+// db.Ingredient.hasMany(ingredientRecipe);
 
-db.Recipe.belongsToMany(
-  db.Ingredient,
-  { foreignKey: "ingredientId", as: "ingredient" },
-  { through: "ingredientRecipe" }
-);
+// // The Super Many-to-Many relationship
+// // db.Ingredient.belongsToMany(db.Recipe, { through: "ingredientRecipe" });
+// // db.Recipe.belongsToMany(db.Ingredient, { through: "ingredientRecipe" });
+// // db.Ingredient.hasMany("ingredientRecipe");
+// // "ingredientRecipe".belongsTo(db.Ingredient);
+// // db.Recipe.hasMany("ingredientRecipe");
+// // "ingredientRecipe".belongsTo(db.Recipe);
+
+// // M-M
+// // db.Ingredient.belongsToMany(
+// //   db.Recipe,
+// //   { foreignKey: "recipeId", as: "recipe" ,
+// //   { through: "ingredientRecipe" }
+// // );
+
+// // db.Recipe.belongsToMany(
+// //   db.Ingredient,
+// //   { foreignKey: "ingredientId", as: "ingredient" },
+// //   { through: "ingredientRecipe" }
+// // );
 
 module.exports = db;
